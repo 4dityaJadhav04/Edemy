@@ -11,13 +11,14 @@ import AddCourse from "./pages/educator/AddCourse";
 import MyCourses from "./pages/educator/MyCourses";
 import StudentsEnrolled from "./pages/educator/StudentsEnrolled";
 import Navbar from "./components/students/navbar";
+import Footer from "./components/students/Footer";
 
 const App = () => {
-  const isEducator = useMatch("/educator/*");
+  const isEducatorRoute = useMatch("/educator/*");
   return (
     <div className="text-default min-h-screen bg-white">
       {/* Educator has different navbar */}
-      {!isEducator && <Navbar />}
+      {!isEducatorRoute && <Navbar />}
       <Routes>
         {/* ------------STUDENTS ROUTE -------- */}
         <Route path="/" element={<Home />} />
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="student-enrolled" element={<StudentsEnrolled />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 };
