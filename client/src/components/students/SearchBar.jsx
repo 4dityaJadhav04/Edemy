@@ -18,6 +18,7 @@ const SearchBar = ({ data }) => {
     >
       <img src={assets.search_icon} className="md:w-auto w-10 px-3 " />
       <input
+        id="searchInput"
         onChange={(e) => setInput(e.target.value)}
         value={input}
         type="text"
